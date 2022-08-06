@@ -10,6 +10,8 @@ namespace MyIoc.Controllers
 {
     public class HomeController : Controller
     {
+        private static log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
+
         private IOwner _owner;
         public HomeController(IOwner iOwner)
         {
@@ -20,6 +22,9 @@ namespace MyIoc.Controllers
         {
             List<Owner> allOwners = _owner.getAllOwners();
             Owner owner = allOwners.FirstOrDefault<Owner>();
+
+            log.Info(owner.Id+"-"+owner.Name+"-"+owner.AddressId);
+
             return Content(owner.Name);
             //return View();
         }

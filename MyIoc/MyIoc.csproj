@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -149,12 +152,16 @@
     <Compile Include="Interfaces\Impl\OwnerImpl.cs" />
     <Compile Include="Interfaces\IOwner.cs" />
     <Compile Include="Models\Owner.cs" />
+    <Compile Include="MyUtils\MyAop\LogAfterBehavior.cs" />
     <Compile Include="MyUtils\MyControllerFactory.cs" />
     <Compile Include="MyUtils\MyDIFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ConfigFiles\unity.config" />
+    <None Include="ConfigFiles\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

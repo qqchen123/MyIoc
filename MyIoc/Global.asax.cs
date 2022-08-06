@@ -1,6 +1,7 @@
 using MyIoc.MyUtils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +21,9 @@ namespace MyIoc
 
             //定义自己的控制器工厂
             ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory());
+
+            //log4net
+            log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/ConfigFiles/log4net.config")));
         }
     }
 }
