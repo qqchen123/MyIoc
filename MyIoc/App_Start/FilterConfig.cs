@@ -12,7 +12,8 @@ namespace MyIoc
 
             //全局注册过滤器
             //filters.Add(new MyIndexActionFilter());
-            filters.Add(new MyHandlerErrorAttribute());
+            //filters.Add(new MyHandlerErrorAttribute());
+            filters.Add(new MyExceptionFilterAttribute());
         }
     }
 }
