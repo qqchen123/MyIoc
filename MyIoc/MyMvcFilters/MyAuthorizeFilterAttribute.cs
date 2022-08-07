@@ -29,9 +29,7 @@ namespace MyIoc.MyMvcFilters
             {
                 return;
             }
-            else
-
-           if (httpContext.Session["CurrentUser"] == null || !(httpContext.Session["CurrentUser"] is CurrentUser))
+            else if (httpContext.Session["CurrentUser"] == null || !(httpContext.Session["CurrentUser"] is CurrentUser))
             {
                 if (httpContext.Request.IsAjaxRequest())
                 {
