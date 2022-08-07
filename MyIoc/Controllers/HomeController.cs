@@ -45,5 +45,13 @@ namespace MyIoc.Controllers
 
             return View();
         }
+
+        public ActionResult ExceptionTest()
+        {
+            int a = 1;
+            int b = 0;
+            int c = a / b;
+            return Content("exception test");
+        }
     }
 }
