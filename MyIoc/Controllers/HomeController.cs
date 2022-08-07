@@ -10,6 +10,7 @@ using MyIoc.MyMvcFilters;
 
 namespace MyIoc.Controllers
 {
+    [MyAuthorizeFilter]
     public class HomeController : Controller
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(HomeController));

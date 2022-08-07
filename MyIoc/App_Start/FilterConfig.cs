@@ -14,6 +14,7 @@ namespace MyIoc
             //filters.Add(new MyIndexActionFilter());
             //filters.Add(new MyHandlerErrorAttribute());
             filters.Add(new MyExceptionFilterAttribute());
+            filters.Add(new MyAuthorizeFilterAttribute());
         }
     }
 }
