@@ -25,5 +25,17 @@ namespace MyIoc
             //log4net
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/ConfigFiles/log4net.config")));
         }
+
+        /// <summary>
+        /// 只要相应不是200就会被这里捕捉到
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
+        protected void Application_Error(object sender,EventArgs eventArgs)
+        {
+            Exception exception = Server.GetLastError();
+            Response.Write("System is Error...");
+            Server.ClearError();
+        }
     }
 }
