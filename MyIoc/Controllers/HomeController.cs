@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using log4net;
 using MyIoc.Interfaces;
 using MyIoc.Models;
+using MyIoc.MyMvcFilters;
 
 namespace MyIoc.Controllers
 {
     public class HomeController : Controller
     {
-        private static log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(HomeController));
 
-        private IOwner _owner;
+        private readonly IOwner _owner;
         public HomeController(IOwner iOwner)
         {
             this._owner = iOwner;
@@ -23,16 +25,17 @@ namespace MyIoc.Controllers
             List<Owner> allOwners = _owner.getAllOwners();
             Owner owner = allOwners.FirstOrDefault<Owner>();
 
-            log.Info(owner.Id+"-"+owner.Name+"-"+owner.AddressId);
+            Log.Info(owner.Id+"-"+owner.Name+"-"+owner.AddressId);
 
-            return Content(owner.Name);
-            //return View();
+            //return Content(owner.Name);
+            return View();
         }
 
+        [MyIndexActionFilter]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            Log.Info("--About--");
             return View();
         }
 

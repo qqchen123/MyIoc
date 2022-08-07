@@ -152,6 +152,7 @@
     <Compile Include="Interfaces\Impl\OwnerImpl.cs" />
     <Compile Include="Interfaces\IOwner.cs" />
     <Compile Include="Models\Owner.cs" />
+    <Compile Include="MyMvcFilters\MyIndexActionFilter.cs" />
     <Compile Include="MyUtils\MyAop\LogAfterBehavior.cs" />
     <Compile Include="MyUtils\MyControllerFactory.cs" />
     <Compile Include="MyUtils\MyDIFactory.cs" />

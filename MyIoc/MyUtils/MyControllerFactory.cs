@@ -13,6 +13,8 @@ namespace MyIoc.MyUtils
         //创建控制器
         public override IController CreateController(RequestContext requestContext, string controllerName)
         {
+            //在这里就可以由我们自由的来控制如何构建控制器的实例
+            //让容器来构建实例
             return base.CreateController(requestContext, controllerName);
         }
 
