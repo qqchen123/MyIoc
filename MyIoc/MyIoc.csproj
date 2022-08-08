@@ -162,6 +162,7 @@
     <Compile Include="MyMvcFilters\MyResultFilterAttribute.cs" />
     <Compile Include="MyUtils\MyAop\LogAfterBehavior.cs" />
     <Compile Include="MyUtils\MyControllerFactory.cs" />
+    <Compile Include="MyUtils\MydependencyResolver.cs" />
     <Compile Include="MyUtils\MyDIFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -20,7 +20,9 @@ namespace MyIoc
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //定义自己的控制器工厂
-            ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory());
+            //ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory());
+
+            DependencyResolver.SetResolver(new MydependencyResolver(MyDIFactory.getContainer()));
 
             //log4net
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/ConfigFiles/log4net.config")));
