@@ -22,6 +22,10 @@ namespace MyIoc.MyUtils
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
             //return base.GetControllerInstance(requestContext, controllerType);
+            if (null==controllerType)
+            {
+                return null;
+            }
             IUnityContainer container = MyDIFactory.getContainer();
             object oInstance = container.Resolve(controllerType);
             return (IController)oInstance;
