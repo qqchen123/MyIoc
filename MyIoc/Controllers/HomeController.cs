@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using log4net;
@@ -23,12 +24,8 @@ namespace MyIoc.Controllers
 
         public ActionResult Index()
         {
-            List<Owner> allOwners = _owner.getAllOwners();
-            Owner owner = allOwners.FirstOrDefault<Owner>();
+            IList<Owner> allOwners = _owner.getAllOwners();
 
-            Log.Info(owner.Id+"-"+owner.Name+"-"+owner.AddressId);
-
-            //return Content(owner.Name);
             return View();
         }
 
@@ -52,6 +49,7 @@ namespace MyIoc.Controllers
             int a = 1;
             int b = 0;
             int c = a / b;
+
             return Content("exception test");
         }
     }

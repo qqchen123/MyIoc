@@ -7,12 +7,12 @@ namespace MyIoc.Models
 {
     public class Owner
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int AddressId { get; set; }
-        public int HouseNumber { get; set; }
-        public int WaterMeter { get; set; }
-        public DateTime AddDate { get; set; }
-        public int OwnerTypeId { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual int AddressId { get; set; }
+        public virtual string HouseNumber { get; set; }
+        public virtual int WaterMeter { get; set; }
+        public virtual DateTime AddDate { get; set; }
+        public virtual int OwnerTypeId { get; set; }
     }
 }

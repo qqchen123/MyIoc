@@ -8,6 +8,6 @@ namespace MyIoc.Interfaces
 {
     public interface IOwner
     {
-        List<Owner> getAllOwners();
+        IList<Owner> getAllOwners();
     }
 }
